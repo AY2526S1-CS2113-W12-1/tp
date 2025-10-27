@@ -9,6 +9,7 @@ package Command as CommandPackage {
 Class "<<interface>>\nCommand" as Command
 Class "{abstract}\nXYZCommand" as XYZCommand
 Class XYZCommands
+Class QRSCommands
 }
 
 package Astra{}
@@ -19,8 +20,10 @@ package Ui{}
 Astra .right.> Command : <<create>>
 
 XYZCommand .up.> Command
-note right of XYZCommand: XYZCommand = Abstract AddCommand,\nAbstract CheckCommand
+note right of XYZCommand: XYZCommand = Abstract AddCommand,\nAbstract CheckCommand, etc
 
+QRSCommands .right.> Command
+note top of QRSCommands: QRSCommands = HelpCommand,\nListCommand, etc
 
 XYZCommands -up-|> XYZCommand
 XYZCommands -up-> Activity : modifies
