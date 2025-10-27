@@ -1,5 +1,23 @@
 # ASTRA ChatBot
 
+## Table of Contents
+
+- [Quick Start](#quick-start)
+- [Features](#features)
+  - [Getting Help](#getting-help)
+  - [Adding a Task](#adding-a-task)
+  - [Adding a Tutorial](#adding-a-tutorial)
+  - [Adding a Lecture](#adding-a-lecture)
+  - [Adding an Exam](#adding-an-exam)
+  - [Checking specific Activities](#checking-specific-activity)
+  - [List all Activities](#list-all-activities)
+  - [Deleting Activites](#deleting-activities)
+  - [Completing a Task](#completing-a-task)
+  - [Unmarking a Taks](#unmarking-a-task)
+  - [Changing Deadline](#changing-deadline-)
+  - [GPA Tracker](#gpa-tracker)
+- [FAQ](#faq)
+- [Command Summary](#command-summary)
 
 
 ## Quick Start
@@ -9,7 +27,7 @@
 and run ```java -jar Astra.jar```
 4. Time to start making full use of Astra to make your academic life a breeze!!!
 
-## Features 
+## Features
 * All commands are case-insensitive for easier usability
 * All days of the week may be input with either be spelt in full, in shorthand (minimum 3 letters), or numerical form, 1 to 7
   * e.g. `mon`, `monday`, `1`
@@ -20,6 +38,8 @@ and run ```java -jar Astra.jar```
     * e.g. `03-12`, `dec-03`, `03-december`
   * Timings may be entered in `HHmm` or `HH:mm`
     * e.g. `1300`, `13:00`
+* Arguments in square brackets are optional
+  * e.g. `/by <date> [time]` can be used as `/by 2025-12-03 14:00` or just `/by 2025-12-03`
 
 ### Getting Help
 Ask Astra to List all the available commands the user can use as well as the input format
@@ -32,7 +52,7 @@ Output: Astra will print a list for all the commands available for the user to t
 ### Adding a Task
 Adds a new task to the ActivityList with the input **description** and deadline **date and time**.
 
-Format: `task <description> /by <date> <time> /priority <number>`
+Format: `task <description> /by <date> [time] /priority <number>`
 
 If time is not provided, i.e. just a date, ASTRA will default to 2359H.
 
@@ -191,7 +211,7 @@ Unmarked: #1 [ ]tutorial assignment | Deadline: 3 Apr, 1000H | Priority: 1
 ### Changing Deadline 
 Changes the deadline of a task at the specified index.  
 
-Format:`changedeadline <index> /to <date> <time>`
+Format:`changedeadline <index> /to <date> [time]`
 
 If time is not provided, i.e. just a date, ASTRA will default to 2359H
 
